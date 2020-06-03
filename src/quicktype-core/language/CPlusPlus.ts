@@ -1768,7 +1768,7 @@ export class CPlusPlusRenderer extends ConvenienceRenderer {
 
         const checkConst = this.lookupGlobalName(GlobalNames.CheckConstraint);
         this.emitBlock(
-            ["void ", checkConst, "(", this._stringType.getConstType(), " name, ", this.withConst(classConstraint), " & c, int64_t value)"],            
+            ["inline void ", checkConst, "(", this._stringType.getConstType(), " name, ", this.withConst(classConstraint), " & c, int64_t value)"],            
             false,
             () => {
                 this.emitBlock(
@@ -1825,7 +1825,7 @@ export class CPlusPlusRenderer extends ConvenienceRenderer {
         this.ensureBlankLine();
 
         this.emitBlock(
-            ["void ", checkConst, "(", this._stringType.getConstType(), " name, ", this.withConst(classConstraint), " & c, ", this._stringType.getConstType(), " value)"],
+            ["inline void ", checkConst, "(", this._stringType.getConstType(), " name, ", this.withConst(classConstraint), " & c, ", this._stringType.getConstType(), " value)"],
             false,
             () => {
                 this.emitBlock(
